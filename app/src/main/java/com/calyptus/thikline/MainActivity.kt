@@ -1,5 +1,6 @@
 package com.calyptus.thikline
 
+import android.graphics.Paint
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +10,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bottom_panel.*
 
 class MainActivity : AppCompatActivity() {
-
 
     private var pencil: DrawingTool? = null
     private var line: DrawingTool? = null

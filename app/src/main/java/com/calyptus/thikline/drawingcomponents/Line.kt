@@ -15,17 +15,17 @@ class Line(mContext: Context) : DrawingTool {
     private val lastIndex: Int = 0
     private var drawingView: View? = null
     private var linePoints: FloatArray? = null
-    private val lines: ArrayList<FloatArray> = ArrayList()
+    private var lines: ArrayList<FloatArray>? = null
 
     override fun setTouchEvent(v: View?, event: MotionEvent?) {
         when (event?.action) {
             MotionEvent.ACTION_DOWN -> {
                 linePoints = FloatArray(4)
-                lines.add(linePoints!!)
-                linePoints!![lastIndex + 0] = event.x
-                linePoints!![lastIndex + 1] = event.y
-                linePoints!![lastIndex + 2] = event.x
-                linePoints!![lastIndex + 3] = event.y
+                linePoints?.let { lines?.apply { add(it) } }
+                linePoints?.let { it[lastIndex + 0] = event.x }
+                linePoints?.let { it[lastIndex + 1] = event.y }
+                linePoints?.let { it[lastIndex + 2] = event.x }
+                linePoints?.let { it[lastIndex + 3] = event.y }
                 drawingView!!.invalidate()
             }
             MotionEvent.ACTION_MOVE -> {
@@ -48,13 +48,8 @@ class Line(mContext: Context) : DrawingTool {
         this.drawingView = drawingView
     }
 
-    override fun onDraw(canvas: Canvas?) {
-        if (linePoints == null) {
-            return
-        }
-        for (linePoints in lines) {
-            canvas?.drawLines(linePoints, paint)
-        }
+    override fun setDrawings(drawingData: DrawingData?) {
+        drawingData?.let { lines = it.lines }
     }
 
     init {

@@ -13,8 +13,7 @@ class Oval(context: Context) : DrawingTool {
 
     private var drawingView: View? = null
     private var rectF: RectF? = null
-
-    private var rects = ArrayList<RectF>()
+    private var ovals: ArrayList<RectF>? = null
     private var paint = Paint()
 
     init {
@@ -30,7 +29,7 @@ class Oval(context: Context) : DrawingTool {
         when (event!!.action) {
             MotionEvent.ACTION_DOWN -> {
                 rectF = RectF()
-                rectF?.let(rects::add)
+                rectF?.let { ovals?.apply { add(it) } }
                 rectF?.apply { set(event.x, event.y, event.x, event.y) }
                 drawingView?.invalidate()
             }
@@ -50,10 +49,8 @@ class Oval(context: Context) : DrawingTool {
         this.drawingView = drawingView
     }
 
-    override fun onDraw(canvas: Canvas?) {
-        for (rectF in rects) {
-            canvas?.apply { drawOval(rectF, paint) }
-        }
+    override fun setDrawings(drawingData: DrawingData?) {
+        drawingData?.let { ovals = it.ovals }
     }
 
 }

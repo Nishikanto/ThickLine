@@ -14,7 +14,7 @@ class Rectangle(context: Context) : DrawingTool {
     private var drawingView: View? = null
     private var rectF: RectF? = null
 
-    private var rects = ArrayList<RectF>()
+    private var rects: ArrayList<RectF>? = null
     private var paint = Paint()
 
     init {
@@ -30,7 +30,7 @@ class Rectangle(context: Context) : DrawingTool {
         when (event!!.action) {
             MotionEvent.ACTION_DOWN -> {
                 rectF = RectF()
-                rectF?.let(rects::add)
+                rectF?.let { rects?.apply { add(it) } }
                 rectF?.apply { set(event.x, event.y, event.x, event.y) }
                 drawingView?.invalidate()
             }
@@ -50,10 +50,9 @@ class Rectangle(context: Context) : DrawingTool {
         this.drawingView = drawingView
     }
 
-    override fun onDraw(canvas: Canvas?) {
-        for (rectF in rects) {
-            canvas?.apply { drawRect(rectF, paint) }
-        }
+
+    override fun setDrawings(drawingData: DrawingData?) {
+        drawingData?.let { rects = it.rects }
     }
 
 }

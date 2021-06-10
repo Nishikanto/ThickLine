@@ -14,21 +14,21 @@ class Pencil(context: Context?) : DrawingTool {
     var path: Path? = null
     var paint: Paint = Paint()
     private var drawingView: View? = null
-    private val paths = ArrayList<Path>()
+    private var paths: ArrayList<Path>? = null
 
 
     override fun setTouchEvent(v: View?, event: MotionEvent?) {
         when (event?.action) {
             MotionEvent.ACTION_DOWN -> {
                 path = Path()
-                paths.add(path!!)
-                path!!.moveTo(event.x, event.y)
-                path!!.lineTo(event.x, event.y)
+                path?.let { paths?.apply { add(it) } }
+                path?.apply {  moveTo(event.x, event.y)}
+                path?.apply { lineTo(event.x, event.y)}
                 drawingView!!.invalidate()
             }
             MotionEvent.ACTION_MOVE -> {
-                path!!.lineTo(event.x, event.y)
-                drawingView!!.invalidate()
+                path?.apply { lineTo(event.x, event.y)}
+                drawingView?.apply {  invalidate()}
             }
             MotionEvent.ACTION_UP -> {
                 v?.performClick()
@@ -42,10 +42,8 @@ class Pencil(context: Context?) : DrawingTool {
         this.drawingView = drawingView
     }
 
-    override fun onDraw(canvas: Canvas?) {
-        for (path in paths) {
-            canvas?.drawPath(path, paint)
-        }
+    override fun setDrawings(drawingData: DrawingData?) {
+        drawingData?.let { paths = it.paths }
     }
 
     init {
