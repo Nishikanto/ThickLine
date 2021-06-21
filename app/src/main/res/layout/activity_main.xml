@@ -18,15 +18,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/drawingView">
+        app:layout_constraintTop_toBottomOf="@+id/artBoard">
 
         <include layout="@layout/bottom_panel" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <com.calyptus.thikline.drawingcomponents.DrawingView
-        android:id="@+id/drawingView"
+    <com.calyptus.thikline.drawingcomponents.ArtBoard
+        android:id="@+id/artBoard"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="64dp"
