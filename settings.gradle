@@ -1,2 +1,8 @@
-rootProject.name = "ThikLine"
+rootProject.name = "ThickLine"
 include ':app'
+include ':libraries'
+include ':libraries:art-elements'
+include ':features'
+include ':features:artboard'
+include ':libraries:ui-components'
+include ':libraries:actions'
