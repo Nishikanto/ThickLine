@@ -1,8 +1,11 @@
-package com.calyptus.artelement.data
+package com.calyptus.elements.data
 
 import java.util.*
 import kotlin.collections.ArrayList
 
+/**
+ * @author Nishikanto Sarkar
+ */
 class History {
     private val layers: ArrayList<Layer> = ArrayList()
 

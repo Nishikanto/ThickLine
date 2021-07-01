@@ -1,4 +1,4 @@
-package com.calyptus.artelement.shapes
+package com.calyptus.elements.shapes
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -7,7 +7,9 @@ import android.graphics.Paint
 import android.graphics.PointF
 import android.view.MotionEvent
 
-
+/**
+ * @author Nishikanto Sarkar
+ */
 class ImageShape : BitmapShape {
 
 

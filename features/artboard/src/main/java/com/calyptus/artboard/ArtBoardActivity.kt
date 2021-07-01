@@ -3,11 +3,11 @@ package com.calyptus.artboard
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.calyptus.artelement.paints.PaintFactory
-import com.calyptus.artelement.shapes.LineShape
-import com.calyptus.artelement.shapes.OvalShape
-import com.calyptus.artelement.shapes.PencilShape
-import com.calyptus.artelement.shapes.RectangleShape
+import com.calyptus.elements.paints.PaintFactory
+import com.calyptus.elements.shapes.LineShape
+import com.calyptus.elements.shapes.OvalShape
+import com.calyptus.elements.shapes.PencilShape
+import com.calyptus.elements.shapes.RectangleShape
 import kotlinx.android.synthetic.main.activity_art_board.*
 
 class ArtBoardActivity : AppCompatActivity() {

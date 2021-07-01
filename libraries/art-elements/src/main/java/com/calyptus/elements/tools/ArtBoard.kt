@@ -1,4 +1,4 @@
-package com.calyptus.artelement.tools
+package com.calyptus.elements.tools
 
 import android.content.Context
 import android.graphics.Canvas
@@ -7,9 +7,9 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnTouchListener
-import com.calyptus.artelement.data.History
-import com.calyptus.artelement.data.Layer
-import com.calyptus.artelement.shapes.Shape
+import com.calyptus.elements.data.History
+import com.calyptus.elements.data.Layer
+import com.calyptus.elements.shapes.Shape
 
 /**
  * @author Nishikanto Sarkar

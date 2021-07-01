@@ -1,10 +1,13 @@
-package com.calyptus.artelement.paints
+package com.calyptus.elements.paints
 
 import android.content.Context
 import android.graphics.Paint
 import androidx.core.content.ContextCompat
 import java.lang.NullPointerException
 
+/**
+ * @author Nishikanto Sarkar
+ */
 class PaintFactory {
 
     fun getPaint(context : Context?) : Paint {

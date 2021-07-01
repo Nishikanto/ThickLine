@@ -26,7 +26,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <com.calyptus.artelement.tools.ArtBoard
+    <com.calyptus.elements.tools.ArtBoard
         android:id="@+id/artBoard"
         android:layout_width="0dp"
         android:layout_height="0dp"

@@ -1,4 +1,4 @@
-package com.calyptus.artelement.shapes
+package com.calyptus.elements.shapes
 
 import android.content.Context
 import android.graphics.Canvas
@@ -8,6 +8,9 @@ import android.graphics.PointF
 import android.view.MotionEvent
 import kotlin.math.abs
 
+/**
+ * @author Nishikanto Sarkar
+ */
 class PencilShape : Shape {
 
     private val path = Path()
